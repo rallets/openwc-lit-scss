@@ -8,8 +8,8 @@
   "module": "dist/src/index.js",
   "scripts": {
     "analyze": "cem analyze --litelement",
-    "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
-    "build": "rimraf dist && tsc && rollup -c rollup.config.js && npm run analyze -- --exclude dist",
+	"start": "concurrently -k -n TSC,HTTP -c blue.bold,magenta.bold \"tsc -w --noEmit\" \"rollup -c rollup.config.js -w\" \"wds\"",
+    "build": "rimraf dist && rollup -c rollup.config.js && npm run analyze -- --exclude dist",
     "start:build": "npm run build && es-dev-server --root-dir demo --app-index index.html --compatibility none --open",
     "prepublish": "tsc && npm run analyze -- --exclude dist",
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",

@@ -2,7 +2,6 @@ import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import style from './button-style.scss';
-// import style from './button-style.css';
 
 @customElement('md-button')
 export class MdButton extends LitElement {
