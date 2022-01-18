@@ -1,0 +1,1 @@
+# openwc-lit-scss
